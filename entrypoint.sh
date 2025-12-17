@@ -13,5 +13,7 @@ python manage.py migrate --noinput
 
 # фикстура с товарами (в репо она есть)
 python manage.py loaddata products.yaml || true
+python manage.py loaddata promo_codes.yaml || true
+
 
 exec "$@"
