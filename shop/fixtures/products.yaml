@@ -1,0 +1,29 @@
+- model: shop.product
+  pk: 101
+  fields:
+    name: "Конструктор (набор деталей)"
+    price: 1299
+
+- model: shop.product
+  pk: 102
+  fields:
+    name: "Мягкий медведь"
+    price: 899
+
+- model: shop.product
+  pk: 103
+  fields:
+    name: "Машинка на радиоуправлении"
+    price: 2499
+
+- model: shop.product
+  pk: 104
+  fields:
+    name: "Кукла"
+    price: 799
+
+- model: shop.product
+  pk: 105
+  fields:
+    name: "Настольная игра"
+    price: 1599

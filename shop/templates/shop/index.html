@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Товары</title>
+</head>
+<body>
+    <div>
+        <h3>Список</h3>
+
+        <form method="get" style="margin-bottom: 12px;">
+            {{ promo_form.as_p }}
+            <button type="submit">Применить</button>
+        </form>
+
+        {% if discount_percent %}
+            <p>Скидка по промокоду: {{ discount_percent }}%</p>
+        {% endif %}
+
+        <table>
+            <tr>
+                <td><p>Наименование</p></td>
+                <td><p>Цена</p></td>
+                <td></td>
+            </tr>
+            {% for p in products %}
+                <tr>
+                    <td><p>{{ p.name }}</p></td>
+                    <td>
+                        {% if p.discounted_price %}
+                            <p>
+                                <s>{{ p.price }}</s>
+                                <b>{{ p.discounted_price|floatformat:2 }}</b>
+                            </p>
+                        {% else %}
+                            <p>{{ p.price }}</p>
+                        {% endif %}
+                    </td>
+                    <td><p><a href="/buy/{{ p.id }}">Купить</a></p></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

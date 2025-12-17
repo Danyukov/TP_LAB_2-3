@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: django_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  web:
+    build: .
+    environment:
+      DEBUG: "1"
+      ALLOWED_HOSTS: "localhost,127.0.0.1"
+      DATABASE_HOST: "db"
+      DATABASE_PORT: "5432"
+      DATABASE_PASSWORD: "postgres"
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+volumes:
+  pgdata:
