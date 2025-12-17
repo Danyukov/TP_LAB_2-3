@@ -17,6 +17,11 @@
             <p>Скидка по промокоду: {{ discount_percent }}%</p>
         {% endif %}
 
+        {% if promo_error %}
+            <p style="color: red;">{{ promo_error }}</p>
+        {% endif %}
+
+
         <table>
             <tr>
                 <td><p>Наименование</p></td>

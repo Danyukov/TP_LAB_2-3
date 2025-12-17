@@ -1,0 +1,20 @@
+- model: shop.promocode
+  pk: 1
+  fields:
+    code: "TOYS5"
+    discount_percent: 5
+    is_active: true
+
+- model: shop.promocode
+  pk: 2
+  fields:
+    code: "TOYS10"
+    discount_percent: 10
+    is_active: true
+
+- model: shop.promocode
+  pk: 3
+  fields:
+    code: "TOYS15"
+    discount_percent: 15
+    is_active: true
